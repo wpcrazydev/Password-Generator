@@ -32,7 +32,7 @@ function generatePassword() {
 
   // Enable copy button
   const copyBtn = document.getElementById('copyBtn');
-  copyBtn.style.display = 'inline-block'; // Display the copy button
+  copyBtn.disabled = false;
   copyBtn.addEventListener('click', function() {
     // Copy password to clipboard
     navigator.clipboard.writeText(password)
