@@ -1,3 +1,5 @@
+
+
 document.getElementById('generateBtn').addEventListener('click', generatePassword);
 
 function generatePassword() {
@@ -37,7 +39,15 @@ function generatePassword() {
     // Copy password to clipboard
     navigator.clipboard.writeText(password)
       .then(() => {
-        alert('Password copied to clipboard!');
+        // Show popup
+        const popup = document.createElement('div');
+        popup.className = 'popup';
+        popup.textContent = 'Password copied to clipboard!';
+        document.body.appendChild(popup);
+        // Remove popup after 2 seconds
+        setTimeout(() => {
+          popup.remove();
+        }, 2000);
       })
       .catch(err => {
         console.error('Failed to copy password: ', err);
